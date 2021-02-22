@@ -1,0 +1,8 @@
+{
+  "types_node": "^14.14.25",
+  "dotnet": "5.0",
+  "nodejs": "14",
+  "pre_commit": "^1.2.2",
+  "ts_node": "^9.1.1",
+  "typescript": "^4.1.3"
+}

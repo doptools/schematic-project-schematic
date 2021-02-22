@@ -1,0 +1,15 @@
+
+{
+ 
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+
+
+  "schematics": {
+    "project": {
+      "description": "A schematic using a source and a schema to validate options.",
+      "hidden": true,
+      "factory": "./project",
+      "schema": "./project/schema.json"
+    }
+  }
+}

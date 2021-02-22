@@ -1,0 +1,33 @@
+{
+  "name": "<%= packageName %>",
+  "version": "0.0.0",
+  "description": "Schematic for generating something",
+  "author": "",
+  "scripts": {
+    "clear": "rimraf .tmp/dist",
+    "build:schema": "gulp buildSchema",
+    "build:ts": "tsc -p src/tsconfig.json",
+    "build": "yarn run build:schema && yarn run build:ts",
+    "start": "gulp"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "<%= versions.angular_devkit_core %>",
+    "@angular-devkit/schematics": "<%= versions.angular_devkit_schematics %>",
+    "jsonc-parser": "<%= versions.jsonc_parser %>"
+  },
+  "devDependencies": {
+    "@types/gulp": "<%= versions._types_gulp %>",
+    "@types/node": "<%= versions._types_node %>",
+    "gulp": "<%= versions.gulp %>",
+    "json-schema-to-typescript": "<%= versions.json_schema_to_typescript %>",
+    "pre-commit": "<%= versions.pre_commit %>",
+    "rimraf": "<%= versions.rimraf %>",
+    "ts-node": "<%= versions.ts_node %>",
+    "typescript": "<%= versions.typescript %>"
+  },
+  "pre-commit": []
+}

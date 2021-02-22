@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicProjectOptions",
+  "title": "Schematic Project Options",
+  "type": "object",
+  "properties": {
+    "directory": {
+      "type": "string",
+      "description": "The directory name to create the development environment in."
+    },
+    "name": {
+      "description": "The name of the project",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the new project?"
+    },
+    "skipGit": {
+      "description": "Do not initialize a git repository.",
+      "type": "boolean",
+      "default": false,
+      "alias": "g"
+    },
+    "commit": {
+      "description": "Initial git repository commit information.",
+      "oneOf": [
+        { "type": "boolean" },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": ["name", "email"]
+        }
+      ],
+      "default": true
+    },
+    "skipInstall": {
+      "description": "Do not install dependency packages.",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": ["name"]
+}
